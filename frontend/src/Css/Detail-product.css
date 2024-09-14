@@ -1,0 +1,1607 @@
+.main-container {
+    padding: 0 90px; /* Side padding */
+}
+
+.show-more-review {
+    margin: 0 5px;
+    color: #ff6a00;
+}
+
+.page-name {
+    margin: 0;
+    margin-top: 20px;
+    color: gray;
+}
+
+.product-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.info-product {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.detail-product-logo {
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.detail-product-name {
+    width: 350px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.buy-window {
+    background-color: rgba(255, 106, 0, 0.22);
+    width: 750px;
+    height: 79px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.buy-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.detail-product-price {
+    font-size: 22px;
+    margin-right: 20px;
+}
+
+.detail-product-buy {
+    background-color: #ff6a00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 165px;
+    text-align: center;
+    transition: all 0.5s ease; /* Плавные изменения */
+}
+
+.product-description {
+    margin-top: 20px;
+}
+
+.product-description-window {
+    background-color: #f7f7f7;
+    width: 750px;
+    height: auto;
+    padding: 20px;
+    margin-top: 10px;
+    transition: box-shadow 0.5s ease;
+    border-radius: 10px;
+}
+
+.product-description-window:hover {
+    box-shadow: 0px 0px 20px 1px #BFBFBF;
+}
+
+.product-description-window p {
+    font-size: 18px;
+    margin: 0;
+    width: 720px;
+}
+
+
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+}
+
+.nickname {
+    font-weight: bold;
+    padding: 0 5px;
+    font-size: 17px;
+}
+
+.status.online {
+    padding: 0 5px;
+    font-size: 16px;
+    color: green;
+}
+
+.menu img {
+    width: 23px;
+    height: 23px;
+}
+
+.detail-product-chat-container {
+    height: 600px;
+    width: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+    transition: box-shadow 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-product-chat-container:hover {
+    box-shadow: 0px 0px 20px 1px #BFBFBF;
+}
+
+.detail-product-chat-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px 10px 0 0; /* Закругление верхней части */
+}
+
+.detail-product-chat-messages {
+    width: 400px;
+    flex: 1;
+    padding: 10px;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 0 0 10px 10px; /* Закругление нижней части */
+}
+
+.detail-product-message {
+    margin: 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 95%;
+    position: relative; /* Добавлено для позиционирования времени */
+}
+
+.user-msg {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    color: #ffffff;
+    width: 100%; 
+}
+
+.other-msg {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    color: #ffffff;
+    width: 100%; 
+}
+
+.detail-product-message.user {
+    background-color: #ff6a00;
+    align-self: flex-end;
+    margin-right: 0; /* Убираем лишний отступ для сообщений пользователя */
+    max-width: 85%;
+}
+
+.detail-product-message.other {
+    background-color: #323131;
+    align-self: flex-start;
+    margin-left: 0; /* Убираем лишний отступ для чужих сообщений */
+    max-width: 85%; 
+}
+
+.detail-product-message .content {
+    margin-bottom: 5px; /* Немного пространства перед временем */
+    margin-right: 40px;
+}
+
+.detail-product-message .time {
+    font-size: 14px;
+    color: #cecece;
+    font-weight: 600;
+    position: absolute;
+    bottom: 5px;
+    right: 10px; /* Время в правом нижнем углу */
+}
+
+.detail-product-chat-footer {
+    display: flex;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 10px 10px;
+}
+
+.detail-product-chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    margin-right: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.5s ease;
+}
+
+.detail-product-chat-footer input:focus {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+.detail-product-chat-footer img {
+    margin: 0 0 1px 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.review-window {
+    width: 750px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.review {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.user-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; /* Отступ от фото пользователя */
+}
+
+.review-content {
+    flex: 1;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.username-reviews {
+    font-size: 18px;
+    margin-right: 10px; /* Отступ между никнеймом и временем */
+}
+
+.datetime-reviews,
+.nickname-service {
+    font-size: 16px;
+    color: #868686;
+    margin: 2px 10px 0 0;
+}
+
+.reviews-stars {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-left: auto; /* Отодвигает звезды к правому краю */
+}
+
+.reviews-stars li {
+    margin: 3px;
+}
+
+.review-text {
+    font-size: 16px;
+    width: 500px;
+    margin-top: 5px; /* Отступ между заголовком отзыва и текстом */
+}
+
+.review-container {
+    border-top: 1px solid #BFBFBF;
+    width: 750px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.product-reviews {
+    margin: 20px 0 0 0;
+}
+
+.block-button {
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 3px;
+    position: absolute;
+    top: 15%;
+    left: 75%;
+    transform: translateX(-50%);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-icon {
+    vertical-align: middle;
+}
+
+.detail-product-chat-header {
+    position: relative;
+}
+
+.detail-product-price {
+    color: #ff6a00;
+    font-weight: 700;
+}
+
+@media (max-width: 1920px) {
+    .main-container {
+        padding: 0 250px;
+    }
+
+    .buy-window {
+        width: 100%;
+        max-width: 950px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 950px;
+    }
+
+    .product-description-window p {
+        width: 910px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1878px) {
+    .main-container {
+        padding: 0 250px;
+    }
+
+    .buy-window {
+        width: 920px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 920px;
+    }
+
+    .product-description-window p {
+        width: 900px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1856px) {
+    .main-container {
+        padding: 0 250px;
+    }
+
+    .buy-window {
+        width: 880px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 880px;
+    }
+
+    .product-description-window p {
+        width: 840px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1789px) {
+    .main-container {
+        padding: 0 250px;
+    }
+
+    .buy-window {
+        width: 850px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 850px;
+    }
+
+    .product-description-window p {
+        width: 810px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1767px) {
+    .main-container {
+        padding: 0 250px;
+    }
+
+    .buy-window {
+        width: 820px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 820px;
+    }
+
+    .product-description-window p {
+        width: 780px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1720px) {
+    .main-container {
+        padding: 0 250px;
+    }
+
+    .buy-window {
+        width: 790px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 790px;
+    }
+
+    .product-description-window p {
+        width: 750px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1685px) {
+    .main-container {
+        padding: 0 250px;
+    }
+
+    .buy-window {
+        width: 750px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 750px;
+    }
+
+    .product-description-window p {
+        width: 710px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1589px) {
+    .main-container {
+        padding: 0 90px;
+    }
+
+    .buy-window {
+        width: 750px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 750px;
+    }
+
+    .product-description-window p {
+        width: 710px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .main-container {
+        padding: 0 90px;
+    }
+
+    .buy-window {
+        width: 100%;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 750px
+    }
+
+    .product-description-window p {
+        width: 710px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1315px) {
+    .main-container {
+        padding: 0 30px;
+    }
+
+    .buy-window {
+        width: 100%;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 750px
+    }
+
+    .product-description-window p {
+        width: 710px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1233px) {
+    .main-container {
+        padding: 0 30px;
+    }
+
+    .buy-window {
+        width: 680px;
+        height: 70px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 680px;
+    }
+
+    .product-description-window p {
+        width: 640px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+
+    .detail-product-price {
+        font-size: 21px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+}
+
+@media (max-width: 1151px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 640px;
+        height: 68px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 640px;
+    }
+
+    .product-description-window p {
+        width: 600px;
+    }
+
+    .detail-product-chat-container {
+        width: 400px;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+}
+
+@media (max-width: 1112px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 570px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 570px;
+    }
+
+    .product-description-window p {
+        width: 530px;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1011px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 940px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 940px;
+    }
+
+    .product-description-window p {
+        width: 910px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 940px;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 990px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 900px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 900px;
+    }
+
+    .product-description-window p {
+        width: 870px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 900px;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 942px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 860px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 860px;
+    }
+
+    .product-description-window p {
+        width: 830px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 860px;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 892px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 800px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 800px;
+    }
+
+    .product-description-window p {
+        width: 770px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 800px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 840px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 750px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 750px;
+    }
+
+    .product-description-window p {
+        width: 720px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 750px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 650px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 650px;
+    }
+
+    .product-description-window p {
+        width: 620px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 650px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 688px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 500px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 500px;
+    }
+
+    .product-description-window p {
+        width: 470px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 500px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+    
+    .review-window,
+    .review-container {
+        width: 500px;
+    }
+
+    .user-img {
+        width: 40px;
+        height: 40px;
+        margin-right: 7px; /* Отступ от фото пользователя */
+    }
+    
+    .review-content {
+        flex: 1;
+    }
+    
+    .review-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    
+    .username-reviews {
+        font-size: 17px;
+        margin-right: 7px; /* Отступ между никнеймом и временем */
+    }
+    
+    .datetime-reviews,
+    .nickname-service {
+        font-size: 15px;
+        color: #868686;
+        margin: 2px 7px 0 0;
+    }
+    
+    .reviews-stars {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin-left: auto; /* Отодвигает звезды к правому краю */
+    }
+    
+    .reviews-stars li {
+        margin: 3px;
+    }
+    
+    .review-text {
+        font-size: 16px;
+        width: 440px;
+        margin-top: 5px; /* Отступ между заголовком отзыва и текстом */
+    }
+    
+    .review-container {
+        border-top: 1px solid #BFBFBF;
+        padding: 20px;
+        margin-top: 10px;
+    }
+    
+    .product-reviews {
+        margin: 20px 0 0 0;
+    }
+}
+
+@media (max-width: 546px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 450px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 450px;
+    }
+
+    .product-description-window p {
+        width: 420px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 450px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+    
+    .review-window,
+    .review-container {
+        width: 450px;
+    }
+
+    .user-img {
+        width: 40px;
+        height: 40px;
+        margin-right: 1px; /* Отступ от фото пользователя */
+    }
+    
+    .review-content {
+        flex: 1;
+    }
+
+    
+    .username-reviews {
+        font-size: 17px;
+        margin-right: 7px; /* Отступ между никнеймом и временем */
+    }
+    
+    .datetime-reviews,
+    .nickname-service {
+        font-size: 15px;
+        color: #868686;
+        margin: 2px 7px 0 0;
+    }
+    
+    .reviews-stars {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin-left: auto; /* Отодвигает звезды к правому краю */
+    }
+    
+    .reviews-stars li {
+        margin: 3px;
+    }
+    
+    .review-text {
+        font-size: 14px;
+        width: 400px;
+        margin-top: 5px; /* Отступ между заголовком отзыва и текстом */
+    }
+    
+    .review-container {
+        border-top: 1px solid #BFBFBF;
+        padding: 20px 0 0 0;
+        margin-top: 10px;
+    }
+    
+    .product-reviews {
+        margin: 20px 0 0 0;
+    }
+
+    .detail-product-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .detail-product-name {
+        width: 300px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 442px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 390px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 390px;
+    }
+
+    .product-description-window p {
+        width: 350px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 390px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+    
+    .user-img {
+        width: 35px;
+        height: 35px;
+        margin-right: 5px; /* Отступ от фото пользователя */
+    }
+    
+    .review-content {
+        flex: 1;
+    }
+
+    .username-reviews {
+        font-size: 16px;
+        margin-right: 7px; /* Отступ между никнеймом и временем */
+    }
+    
+    .datetime-reviews,
+    .nickname-service {
+        font-size: 14px;
+        color: #868686;
+        margin: 2px 10px 0 0;
+    }
+    
+    .reviews-stars {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin-left: auto; /* Отодвигает звезды к правому краю */
+    }
+    
+    .reviews-stars li {
+        margin: 0;
+    }
+    
+    .review-text {
+        font-size: 15px;
+        width: 350px;
+        margin-top: 5px; /* Отступ между заголовком отзыва и текстом */
+    }
+    
+    .review-container {
+        border-top: 1px solid #BFBFBF;
+        padding: 20px 0 0 0;
+        margin-top: 10px;
+    }
+    
+    .product-reviews {
+        margin: 3px;
+    }
+
+    .detail-product-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .detail-product-name {
+        width: 270px;
+        font-size: 20px;
+    }
+
+    .stars-2, .stars-3, .stars-4, .stars-5 {
+        display: none;
+    }
+}
+
+@media (max-width: 414px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 370px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 370px;
+    }
+
+    .product-description-window p {
+        width: 330px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 370px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+
+    .user-img {
+        width: 35px;
+        height: 35px;
+        margin-right: 5px; /* Отступ от фото пользователя */
+    }
+    
+    .review-content {
+        flex: 1;
+    }
+
+    
+    .username-reviews {
+        font-size: 16px;
+        margin-right: 7px; /* Отступ между никнеймом и временем */
+    }
+    
+    .datetime-reviews,
+    .nickname-service {
+        font-size: 14px;
+        color: #868686;
+        margin: 2px 10px 0 0;
+    }
+    
+    .reviews-stars {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin-left: auto; /* Отодвигает звезды к правому краю */
+    }
+    
+    .reviews-stars li {
+        margin: 0;
+    }
+    
+    .review-text {
+        font-size: 15px;
+        width: 300px;
+        margin-top: 5px; /* Отступ между заголовком отзыва и текстом */
+    }
+    
+    .review-container {
+        border-top: 1px solid #BFBFBF;
+        padding: 20px 0 0 0;
+        margin-top: 10px;
+    }
+    
+    .product-reviews {
+        margin: 3px;
+    }
+
+    .detail-product-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .detail-product-name {
+        width: 250px;
+        padding-right: 25px;
+        font-size: 20px;
+    }
+
+    .stars-2, .stars-3, .stars-4, .stars-5 {
+        display: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 340px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 340px;
+    }
+
+    .product-description-window p {
+        width: 300px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 340px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+
+    .user-img {
+        width: 35px;
+        height: 35px;
+        margin-right: 5px; /* Отступ от фото пользователя */
+    }
+    
+    .review-content {
+        flex: 1;
+    }
+
+    
+    .username-reviews {
+        font-size: 16px;
+        margin-right: 7px; /* Отступ между никнеймом и временем */
+    }
+    
+    .datetime-reviews,
+    .nickname-service {
+        font-size: 14px;
+        color: #868686;
+        margin: 2px 10px 0 0;
+    }
+    
+    .reviews-stars {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin-left: auto; /* Отодвигает звезды к правому краю */
+    }
+    
+    .reviews-stars li {
+        margin: 0;
+    }
+    
+    .review-text {
+        font-size: 15px;
+        width: 300px;
+        margin-top: 5px; /* Отступ между заголовком отзыва и текстом */
+    }
+    
+    .review-container {
+        border-top: 1px solid #BFBFBF;
+        padding: 20px 0 0 0;
+        margin-top: 10px;
+    }
+    
+    .product-reviews {
+        margin: 3px;
+    }
+
+    .detail-product-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .detail-product-name {
+        width: 230px;
+        padding-right: 25px;
+        font-size: 20px;
+    }
+
+    .stars-2, .stars-3, .stars-4, .stars-5 {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .main-container {
+        padding: 0 25px;
+    }
+
+    .buy-window {
+        width: 315px;
+    }
+
+    .product-description-window,
+    .review-window,
+    .review-container {
+        width: 315px;
+    }
+
+    .product-description-window p {
+        width: 280px;
+        font-size: 16px;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .detail-product-chat-container {
+        width: 315px;
+    }
+
+    .detail-product-chat-messages {
+        width: 100%;
+    }
+
+    .detail-product-price {
+        font-size: 20px;
+    }
+    
+    .detail-product-buy {
+        width: 160px;
+    }
+
+    .detail-product-message.user {
+        margin-right: 0;
+    }
+
+    .user-img {
+        width: 35px;
+        height: 35px;
+        margin-right: 5px; /* Отступ от фото пользователя */
+    }
+    
+    .review-content {
+        flex: 1;
+    }
+
+    
+    .username-reviews {
+        font-size: 16px;
+        margin-right: 7px; /* Отступ между никнеймом и временем */
+    }
+    
+    .datetime-reviews,
+    .nickname-service {
+        font-size: 14px;
+        color: #868686;
+        margin: 2px 10px 0 0;
+    }
+    
+    .reviews-stars {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin-left: auto; /* Отодвигает звезды к правому краю */
+    }
+    
+    .reviews-stars li {
+        margin: 0;
+    }
+    
+    .review-text {
+        font-size: 14px;
+        width: 280px;
+        margin-top: 5px; /* Отступ между заголовком отзыва и текстом */
+    }
+    
+    .review-container {
+        border-top: 1px solid #BFBFBF;
+        padding: 20px 0 0 0;
+        margin-top: 10px;
+    }
+    
+    .product-reviews {
+        margin: 3px;
+    }
+
+    .detail-product-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .detail-product-name {
+        width: 200px;
+        padding-right: 25px;
+        font-size: 20px;
+    }
+
+    .stars-2, .stars-3, .stars-4, .stars-5 {
+        display: none;
+    }
+}

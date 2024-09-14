@@ -1,0 +1,449 @@
+.header {
+    background-color: #252525;
+    height: 71px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 90px;
+    position: relative;
+}
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+li {
+    margin-right: 20px;
+}
+
+li:last-child {
+    margin-right: 0;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+.catalog {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Добавьте это свойство для горизонтального центрирования */
+    height: 40px;
+    width: 153px; /* Убедитесь, что ширина соответствует вашим требованиям */
+    background-color: #ff6a00;
+    color: #ffffff; /* Цвет текста */
+    font-family: 'Racing Sans One', sans-serif; /* Шрифт */
+    font-size: 19px; /* Размер шрифта */
+    font-weight: bold; /* Регулярное начертание */
+    border-radius: 7px; /* Закругление */
+    padding: 0 10px; /* Отступы по бокам */
+    text-align: center; /* Выравнивание текста по центру */
+    line-height: 40px; /* Вертикальное выравнивание текста */
+    cursor: pointer; /* Указатель курсора при наведении */
+    transition: background-color 0.3s ease; /* Плавный переход фона */
+    border: none;
+}
+
+.catalog:hover {
+    background-color: #f07008; 
+}
+
+
+.catalog img {
+    width: 21px; /* Размер картинки */
+    height: 21px;
+    margin-right: 10px; /* Отступ между текстом и картинкой */
+}
+
+.search {
+    width: 450px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #ccc; /* Легкий бордер для поля поиска */
+    padding: 0 10px; /* Отступы внутри поля поиска */
+    font-size: 14px; /* Размер текста внутри поля поиска */
+    box-sizing: border-box; /* Учитывает padding и border в ширину элемента */
+    transition: border-color 0.5s ease;
+}
+
+.search:focus {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One:wght@400&display=swap');
+
+.premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Добавьте это свойство для горизонтального центрирования */
+    height: 40px;
+    width: 153px; /* Убедитесь, что ширина соответствует вашим требованиям */
+    background-color: rgba(175, 122, 59, 0.22); /* Цвет фона с 22% прозрачностью */
+    color: #ff6a00; /* Цвет текста */
+    font-family: 'Racing Sans One', sans-serif; /* Шрифт */
+    font-size: 19px; /* Размер шрифта */
+    font-weight: normal; /* Регулярное начертание */
+    border-radius: 7px; /* Закругление */
+    padding: 0 10px; /* Отступы по бокам */
+    text-align: center; /* Выравнивание текста по центру */
+    line-height: 40px; /* Вертикальное выравнивание текста */
+    cursor: pointer; /* Указатель курсора при наведении */
+    transition: background-color 0.3s ease; /* Плавный переход фона */
+}
+
+.premium:hover {
+    background-color: rgba(175, 122, 59, 0.4); /* Увеличенная непрозрачность при наведении */
+}
+
+.right-btn {
+    display: flex;
+    align-items: center; /* Центрирование иконок по вертикали */
+    gap: 3px; /* Отступы между иконками */
+}
+
+.right-btn img {
+    display: block; /* Убирает лишние пробелы вокруг изображений */
+}
+
+/* Иконка чата */
+.right-btn .chat img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Иконка уведомлений */
+.right-btn .notifications img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Иконка профиля */
+.right-btn .profile img {
+    width: 45px;
+    height: 45px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 45px;
+}
+
+.logo img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.auth {
+    display: inline-block;
+    color: #9D9D9D; /* Цвет текста */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Жирность текста */
+    text-decoration: none; /* Удаляет подчеркивание ссылки */
+}
+
+.create-account {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    width: 170px; /* Ширина аналогична кнопке "Каталог" */
+    background-color: #ff6a00; /* Цвет фона кнопки */
+    color: #ffffff; /* Цвет текста */
+    font-family: 'Racing Sans One', sans-serif; /* Шрифт */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Жирность текста */
+    border-radius: 7px; /* Закругление углов */
+    padding: 0 10px; /* Отступы по бокам */
+    text-align: center; /* Выравнивание текста по центру */
+    line-height: 40px; /* Вертикальное выравнивание текста */
+    cursor: pointer; /* Указатель курсора при наведении */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход фона и цвета текста */
+    text-decoration: none; /* Удаляет подчеркивание ссылки */
+}
+
+.create-account:hover {
+    background-color: #f07008; /* Увеличенная непрозрачность или измененный цвет при наведении */
+    color: #ffffff; /* Цвет текста при наведении */
+}
+
+.mobile {
+    display: none;
+}
+
+.profile-icon {
+    border: none; /* Убираем границу */
+    outline: none; /* Убираем обводку */
+    background: none; /* Убираем фон */
+    cursor: pointer;
+}
+
+/* Десктопная версия */
+.desktop .right-btn {
+    display: flex;
+}
+
+@media (max-width: 2000px) {
+    .header {
+        padding: 0 250px;
+    }
+}
+
+@media (max-width: 1900px) {
+    .header {
+        padding: 0 220px;
+    }
+}
+
+
+@media (max-width: 1880px) {
+    .header {
+        padding: 0 250px;
+    }
+}
+
+@media (max-width: 1700px) {
+    .header {
+        padding: 0 255px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .header {
+        padding: 0 90px;
+    }
+}
+
+@media (max-width: 1318px) {
+    .header {
+        padding: 0 20px;
+        height: 71px;
+    }
+
+    .catalog {
+        height: 40px;
+        width: 153px;
+    }
+
+    .search {
+        width: 915px;
+        height: 40px;
+    }
+
+    .profile-icon img {
+        width: 40px; /* Ширина иконки профиля */
+        height: 40px; /* Высота иконки профиля */
+    }
+
+    /* Скрываем десктопную версию и показываем мобильную */
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+    }
+
+    /* Меню для мобильных устройств */
+    .mobile-menu {
+        position: absolute;
+        top: 72px;
+        right: 7px;
+        margin-top: 6px;
+        width: 167px; /* Устанавливаем фиксированную ширину */
+        background-color: #323131;
+        border-radius: 5px;
+        padding: 5px 8px;
+        z-index: 9999; /* Чтобы меню отображалось поверх всех элементов */
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: block; /* Для вертикального списка */
+    }
+
+    .mobile-menu ul li {
+        padding: 1px 0;
+        width: 100%;
+        text-align: left; /* Прижимаем текст к левому краю */
+        border-bottom: 1px solid #585858; /* Горизонтальная линия между элементами */
+        font-size: 16px; /* Устанавливаем размер текста 12px */
+    }
+
+    .mobile-menu ul li:last-child {
+        border-bottom: none; /* Убираем линию у последнего элемента */
+    }
+
+    .mobile-menu ul li a {
+        color: #9D9D9D;
+        text-decoration: none;
+        display: block;
+        padding: 4px 0; /* Уменьшенные кликабельные зоны */
+        margin: 0 8px; /* Уменьшенный отступ текста от краев меню */
+    }
+
+    /* Исключаем Premium из стилей других ссылок */
+    .mobile-menu ul li.premium-link {
+        text-align: center; /* Центрируем только ссылку Premium */
+        font-size: 17px; /* Оставляем размер текста для Premium */
+        margin: 0; /* Убираем отступы у премиум */
+    }
+
+    .mobile-menu ul li.premium-link a {
+        color: #DF6914;
+        font-family: 'Racing Sans One', sans-serif;
+        font-size: 17px;
+        margin: 0; /* Убираем лишние отступы */
+    }
+
+    .catalog-mobile {
+        width: 100%;
+        background: none;
+        border: none;
+        color: #9D9D9D;
+        font-size: 16px;
+        text-align: left;
+        padding: 5px 8px;
+
+    }
+
+    .desktop-catalog {
+        display: none;
+    }
+
+    .catalog-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center; /* Добавьте это свойство для горизонтального центрирования */
+        height: 40px;
+        width: 70px; /* Убедитесь, что ширина соответствует вашим требованиям */
+        background-color: rgba(223, 105, 20);
+        border-radius: 7px; /* Закругление */
+        padding: 0 10px; /* Отступы по бокам */
+        text-align: center; /* Выравнивание текста по центру */
+        line-height: 40px; /* Вертикальное выравнивание текста */
+        cursor: pointer; /* Указатель курсора при наведении */
+        transition: background-color 0.3s ease; /* Плавный переход фона */
+        border: none;
+    }
+
+}
+
+@media (max-width: 1143px) {
+    .search {
+        width: 900px;
+    }
+}
+
+@media (max-width: 1085px) {
+    .search {
+        width: 870px;
+    }
+}
+
+@media (max-width: 1065px) {
+    .desktop-catalog {
+        display: none;
+    }
+
+    .search {
+        width: 850px;
+    }
+
+    @media (max-width: 1050px) {
+        .header {
+            height: 65px;
+        }
+
+        .search {
+            height: 35px;
+            width: 820px;
+        }
+
+        .catalog-button {
+            height: 35px;
+            width: 65;
+        } 
+    }
+
+    @media (max-width: 1040px) {
+        .search {
+            width: 450px;
+        }
+    }
+
+    @media (max-width: 710px) {
+        .search {
+            width: 400px;
+        }
+    }
+
+    @media (max-width: 678px) {
+        .search {
+            width: 360px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .search {
+            width: 260px;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .search {
+            width: 240px;
+        }
+    }
+
+    @media (max-width: 430px) {
+        .logo img {
+            padding: 0;
+        }
+
+        .search {
+            width: 230px;
+        }
+    }
+
+    @media (max-width: 412px) {
+        .search {
+            width: 220px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .search {
+            width: 195px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .search {
+            width: 180px;
+        }
+    }
+}
