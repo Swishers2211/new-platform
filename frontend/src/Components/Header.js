@@ -5,23 +5,27 @@ import "../Css/Header.css";
 
 import logoIcon from '../Images/logo.png';
 import catalogIcon from '../Images/catalog.png';
-import chatIcon from '../Images/chat.png';
-import notificationsIcon from '../Images/notifications.png';
 import profileIcon from '../Images/profile.png';
+import arrowIcon from '../Images/arrow-down.png';
 
 function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Состояние для мобильного меню
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+    
 
-    // Функция для переключения состояния меню
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    // Обработчик изменения размера окна
+    const toggleProfileMenu = () => {
+        setIsProfileMenuOpen(!isProfileMenuOpen);
+    };
+
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth > 768) {
-                setIsMenuOpen(false); // Закрыть меню, если ширина экрана больше 768px
+                setIsMenuOpen(false);
+                setIsProfileMenuOpen(false); // Закрыть меню профиля при изменении размера
             }
         };
 
@@ -30,64 +34,79 @@ function Header() {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [setIsMenuOpen]);
+    }, []);
 
     return (
         <>
-        <header className="header">
-            <div className="left-group">
-                <nav className="nav-left-group">
-                    <ul className="left-btn">
-                        <li className="li-btn-left logo">
-                            <Link className="logo" to="/"><img src={logoIcon} alt="Логотип" /></Link>
-                        </li>
-                        <li className="li-btn-left desktop-catalog">
-                            <Link className="catalog" to="/catalog"><img src={catalogIcon} alt="Каталог" />Каталог</Link>
-                        </li>
-                        <li className="li-btn-left">
-                            <input type="text" placeholder="Поиск по сайту" className="search" />
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div className="right-group desktop">
-                <nav className="nav-right-group">
-                    <ul className="right-btn">
-                        <li className="li-btn-right chat">
-                            <Link className="chat" to="/chat"><img className="chat" src={chatIcon} alt="Чат" /></Link>
-                        </li>
-                        <li className="li-btn-right notifications">
-                            <Link className="notifications" to="/notifications"><img className="notifications" src={notificationsIcon} alt="Уведомления" /></Link>
-                        </li>
-                        <li className="li-btn-right">
-                            <Link className="profile" to="/profile"><img className="profile" src={profileIcon} alt="Профиль" /></Link>
-                        </li>
-                        <li className="li-btn-right">
-                            <Link className="premium" to="/premium">Premium</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div className="right-group mobile">
-                <button className="catalog-button" onClick={toggleMenu}>
-                    <img src={catalogIcon} alt="Каталог" />
-                </button>
-            </div>
-
-            {isMenuOpen && (
-                <div className="mobile-menu">
-                    <ul>
-                        <li><Link to="/">Username</Link></li>
-                        <li><Link to="/catalog" className="catalog-mobile">Каталог</Link></li>
-                        <li><Link to="/chat">Чат</Link></li>
-                        <li><Link to="/notifications">Уведомления</Link></li>
-                        <li className="premium-link">
-                            <Link to="/premium">Premium</Link>
-                        </li>
-                    </ul>
+            <header className="header">
+                <div className="left-group">
+                    <nav className="nav-left-group">
+                        <ul className="left-btn">
+                            <li className="li-btn-left logo">
+                                <Link className="logo" to="/"><img src={logoIcon} alt="Логотип" /></Link>
+                            </li>
+                            <li className="li-btn-left desktop-catalog">
+                                <Link className="catalog" to="/catalog"><img src={catalogIcon} alt="Каталог" />Каталог</Link>
+                            </li>
+                            <li className="li-btn-left">
+                                <input type="text" placeholder="Поиск по сайту" className="search" />
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-            )}
-        </header>
+                <div className="right-group desktop">
+                    <nav className="nav-right-group">
+                        <ul className="right-btn">
+                            {/* <li className="li-btn-right chat" onClick={toggleProfileMenu}>
+                                <Link className="chat" to="/chats">Сообщения</Link>
+                            </li>
+                            <li className="li-btn-right profile-wrapper">
+                                <div className="profile-arrow-container" onClick={toggleProfileMenu}>
+                                    <img className="profile" src={profileIcon} alt="Профиль" />
+                                    <img className="profile-arrow" src={arrowIcon} alt="Стрелка вниз" />
+                                </div>
+                                {isProfileMenuOpen && (
+                                    <div className={`dropdown-dashboard ${isProfileMenuOpen ? 'active' : ''}`}>
+                                        <ul>
+                                            <li onClick={(e) => e.stopPropagation()}><Link className="dashboard" to="/dashboard"><h3>Nickname</h3></Link></li>
+                                            <li onClick={(e) => e.stopPropagation()}><Link className="rules" to="/rules">Правила</Link></li>
+                                        </ul>
+                                    </div>
+                                )}
+                            </li>
+                            <li className="li-btn-right">
+                                <Link className="premium" to="/premium">Premium</Link>
+                            </li> */}
+                            <li className="li-btn-right">
+                                <Link className="auth" to="/auth">Войти</Link>
+                            </li>
+                            <li className="li-btn-right">
+                                <Link className="create-account" to="/create_account">Создать аккаунт</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div className="right-group mobile">
+                    <button className="catalog-button" onClick={toggleMenu}>
+                        <img src={catalogIcon} alt="Каталог" />
+                    </button>
+                </div>
+
+                {isMenuOpen && (
+                    <div className="mobile-menu">
+                        <ul>
+                            <li><Link to="/dashboard">Username</Link></li>
+                            <li><Link to="/catalog" className="catalog-mobile">Каталог</Link></li>
+                            <li><Link to="/chats">Сообщения</Link></li>
+                            <li><Link to="/create_account">Создать аккаунт</Link></li>
+                            <li><Link to="/auth">Войти</Link></li>
+                            <li className="premium-link">
+                                <Link to="/premium">Premium</Link>
+                            </li>
+                        </ul>
+                    </div>
+                )}
+            </header>
         </>
     );
 }

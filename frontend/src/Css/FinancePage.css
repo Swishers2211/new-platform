@@ -1,0 +1,175 @@
+.finance-container {
+    padding: 20px 90px;
+}
+
+.finance-page {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: gray;
+}
+
+.finance-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.withdraw-money {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff6a00;
+    border-radius: 8px;
+    height: 38px;
+    width: 180px;
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.withdraw-money:hover {
+    background-color: #ff7300;
+}
+
+.operation-headers {
+    display: flex;
+    padding: 0 15px;
+}
+
+/* Стиль для списка заголовков */
+.operations-title {
+    display: flex;
+    width: 100%;
+    font-weight: 600;
+}
+
+/* Стиль для элементов списка заголовков */
+.operations-title li {
+    box-sizing: border-box;
+}
+
+/* Фиксированные ширины для заголовков */
+.operations-title .date-time-header {
+    width: 25%; /* Фиксированная ширина для даты/времени */
+}
+
+.operations-title .order-header {
+    width: 30%; /* Фиксированная ширина для номера заказа */
+}
+
+.operations-title .status-header {
+    width: 20%; /* Фиксированная ширина для статуса */
+}
+
+.operations-title .sum-header {
+    width: 30%; /* Фиксированная ширина для суммы */
+    text-align: right; /* Прижимаем к правому краю */
+}
+
+/* Стиль для контейнера данных */
+.checks-info {
+    display: flex;
+    padding: 0 15px;
+}
+
+/* Стиль для элементов списка данных */
+.checks-info li {
+    box-sizing: border-box;
+}
+
+/* Фиксированные ширины для данных */
+.checks-info .date-time-check {
+    width: 25%; /* Фиксированная ширина для даты/времени */
+}
+
+.checks-info .order-number-check {
+    width: 30%; /* Фиксированная ширина для номера заказа */
+}
+
+.checks-info .order-status-check {
+    width: 20%; /* Фиксированная ширина для статуса */
+}
+
+.checks-info .order-sum-check {
+    width: 30%; /* Фиксированная ширина для суммы */
+    text-align: right; /* Прижимаем к правому краю */
+}
+
+.order-number-check .order-number-link {
+    color: black;
+}
+
+.operation-headers {
+    padding: 5px 15px;
+    border-top: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.checks {
+    padding: 5px 0;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+@media (max-width: 2000px) {
+    .finance-container {
+        padding: 20px 250px;
+    }
+
+    .custom-hr-1, .custom-hr-2, .custom-hr-3, .custom-hr-4, .custom-hr-5 {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 1600px) {
+    .finance-container {
+        padding: 20px 90px;
+    }
+
+    .custom-hr-1, .custom-hr-2, .custom-hr-3, .custom-hr-4, .custom-hr-5 {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 1318px) {
+    .finance-container {
+        padding: 20px 20px;
+    }
+
+    .custom-hr-1, .custom-hr-2, .custom-hr-3, .custom-hr-4, .custom-hr-5 {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 418px) {
+    .operations-title .date-time-header {
+        width: 25%; /* Фиксированная ширина для даты/времени */
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .operations-title .order-header {
+        width: 30%; /* Фиксированная ширина для номера заказа */
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .operations-title .status-header {
+        width: 20%; /* Фиксированная ширина для статуса */
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .operations-title .sum-header {
+        width: 30%; /* Фиксированная ширина для суммы */
+        text-align: right; /* Прижимаем к правому краю */
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .checks {
+        font-size: 13px;
+    }
+}

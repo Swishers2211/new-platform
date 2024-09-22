@@ -1,0 +1,121 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.auth-window {
+    width: 380px;
+    height: 500px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    transition: box-shadow 0.5s ease;
+    border: 1px solid #c4c4c4;
+}
+
+.auth-window:hover {
+    box-shadow: 0px 0px 15px 2px #BFBFBF;
+}
+
+.title-auth {
+    text-align: center;
+    font-size: 20px;
+}
+
+.auth-fields form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 0 0;
+}
+
+.auth-fields input {
+    text-align: center;
+    width: 290px;
+    height: 45px;
+    margin: 15px;
+    border-radius: 10px;
+    border: 2px solid #e9e9e9;
+    transition: border-color 0.5s ease;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.auth-fields input::placeholder {
+    font-size: 14px;
+}
+
+.auth-fields input:focus {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+.auth-fields button {
+    text-align: center;
+    width: 290px;
+    height: 45px;
+    margin: 30px 15px 15px 15px;
+    border-radius: 10px;
+    background-color: #ff6a00;
+    color: #fff;
+    border: none;
+    transition: background-color 0.5s ease;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-fields button:hover {
+    background-color: #ff7300; 
+}
+
+.auth-or-register {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+    padding: 10px 25px;
+}
+
+.auth-line-container {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 145px);
+    width: 290px;
+    height: 2px;
+    display: flex;
+}
+
+.auth-gray-line {
+    width: 290px;
+    height: 100%;
+    background-color: #ccc;
+}
+
+/* Полоса черного цвета (над "Создать аккаунт") */
+.auth-black-line {
+    width: 55px;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0%;
+    top: 0;
+    z-index: 1; /* Поставим ниже текста */
+}
+
+/* Стили ссылок */
+.link-auth {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    z-index: 1; /* Поверх полос */
+}
+
+.au-title {
+    color: #ff6a00;
+}

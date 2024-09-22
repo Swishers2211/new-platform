@@ -40,7 +40,10 @@ function DetailProduct() {
                         <div className="buy-window">
                             <h3 className="detail-product-price">1000 ₽</h3>
                             <Link className="buy-link" to="#">
-                                <h3 className="detail-product-buy">Купить</h3>
+                            {/* if user.is_buy */}
+                            <h3 className="detail-product-buy">Подтвердить</h3>
+                            {/* else */}
+                            {/* <h3 className="detail-product-buy">Купить</h3> */}
                             </Link>
                         </div>
                         <h3 className="product-description">Описание товара</h3>

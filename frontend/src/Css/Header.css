@@ -8,6 +8,95 @@
     position: relative;
 }
 
+.chat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ff6a0081;
+    background-color: #ff6a000c;
+    border-radius: 10px;
+    height: 40px;
+    width: 153px;
+    transition: border 0.7s ease;
+}
+
+.chat:hover {
+    border: 2px solid #ff6a00;
+}
+
+.profile-arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile {
+    height: 50px;
+    width: 50px;
+}
+
+.profile-arrow {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.dropdown-dashboard {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: 80px;
+    right: 260px;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cecece;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.dropdown-dashboard.active {
+    display: block; /* Показать меню, когда оно активно */
+}
+
+.dropdown-dashboard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: background-color 0.6s ease;
+}
+
+.dropdown-dashboard .rules, 
+.dropdown-dashboard .msgs, 
+.dropdown-dashboard .notif, .dropdown-dashboard .dashboard {
+    padding: 0;
+    margin: 0;
+    color: #535353;
+    text-decoration: none;
+    width: 100%;
+    padding-left: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-dashboard .dashboard {
+    font-size: 14px;
+    color: black;
+}
+
+.dropdown-dashboard li {
+    margin: 0;
+    padding: 5px 5px;
+    width: 100%;
+}
+
+.dropdown-dashboard li:hover {
+    background-color: #ececec;
+    color: #242424;
+}
+
+
 @media (max-width: 1200px) {
     .header {
         padding: 0 50px;
