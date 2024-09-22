@@ -8,7 +8,10 @@ import "../Css/ListedProductPage.css"
 function ListedProductPage() {
     return (
         <>
-            <p className="listed-page">Главная / Меню / Выставленные</p>
+            <div className="display-the-goods">
+                <p className="listed-page">Главная / Меню / Выставленные</p>
+                <Link className="display-the-goods-link">Добавить предложение</Link>
+            </div>
             <div className="product-grid-listed">
                 <div className="window-product-listed">
                     <Link className="window-product-link-listed" to='/product'>
