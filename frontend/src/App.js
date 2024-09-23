@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import Header from "./Components/Header";
 import Home from './Pages/Home';
@@ -15,26 +15,44 @@ import PurchasePage from "./Pages/PurchasePage";
 import SalesPage from "./Pages/SalesPage";
 import ListedProductPage from "./Pages/ListedProductPage";
 import Footer from "./Components/Footer";
+import PremiumPage from "./Pages/PremiumPage";
+
+// Helper component to conditionally render footer
+const Layout = ({ children }) => {
+  const location = useLocation();
+
+  // Определяем страницы, на которых не нужно показывать футер
+  const noFooterPaths = ["/chats", "/create_account", "/auth", "/premium"];
+
+  return (
+    <>
+      <Header />
+      {children}
+      {!noFooterPaths.includes(location.pathname) && <Footer />} {/* Если путь не в списке, показать футер */}
+    </>
+  );
+}
 
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path='/catalog' element={<Catalog />}/>
-        <Route path="/product" element={<DetailProduct />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/create_account" element={<Registration />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/chats" element={<Chat />} />
-        <Route path="/finance" element={<FinancePage />} />
-        <Route path="/purchases" element={<PurchasePage/>} />
-        <Route path="/sales" element={<SalesPage />}/>
-        <Route path="/listed" element={<ListedProductPage/>}/>
-      </Routes>
-      <Footer/>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path='/catalog' element={<Catalog />}/>
+          <Route path="/product" element={<DetailProduct />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/create_account" element={<Registration />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/chats" element={<Chat />} />
+          <Route path="/finance" element={<FinancePage />} />
+          <Route path="/purchases" element={<PurchasePage />} />
+          <Route path="/sales" element={<SalesPage />} />
+          <Route path="/listed" element={<ListedProductPage />} />
+          <Route path="/premium" element={<PremiumPage />} />
+        </Routes>
+      </Layout>
     </Router>
   );
 }

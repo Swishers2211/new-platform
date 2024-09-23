@@ -94,6 +94,7 @@
 .dropdown-dashboard li:hover {
     background-color: #ececec;
     color: #242424;
+    border-radius: 6px;
 }
 
 

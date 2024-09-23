@@ -57,7 +57,7 @@ function Header() {
                 <div className="right-group desktop">
                     <nav className="nav-right-group">
                         <ul className="right-btn">
-                            {/* <li className="li-btn-right chat" onClick={toggleProfileMenu}>
+                            <li className="li-btn-right chat" onClick={toggleProfileMenu}>
                                 <Link className="chat" to="/chats">Сообщения</Link>
                             </li>
                             <li className="li-btn-right profile-wrapper">
@@ -76,13 +76,13 @@ function Header() {
                             </li>
                             <li className="li-btn-right">
                                 <Link className="premium" to="/premium">Premium</Link>
-                            </li> */}
-                            <li className="li-btn-right">
+                            </li>
+                            {/* <li className="li-btn-right">
                                 <Link className="auth" to="/auth">Войти</Link>
                             </li>
                             <li className="li-btn-right">
                                 <Link className="create-account" to="/create_account">Создать аккаунт</Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </nav>
                 </div>

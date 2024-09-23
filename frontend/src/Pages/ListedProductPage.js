@@ -10,7 +10,7 @@ function ListedProductPage() {
         <>
             <div className="display-the-goods">
                 <p className="listed-page">Главная / Меню / Выставленные</p>
-                <Link className="display-the-goods-link">Добавить предложение</Link>
+                <Link to="/add_offer" className="display-the-goods-link">Добавить предложение</Link>
             </div>
             <div className="product-grid-listed">
                 <div className="window-product-listed">
