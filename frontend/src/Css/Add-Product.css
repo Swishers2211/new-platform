@@ -1,0 +1,375 @@
+.add-offer-page {
+    padding: 20px 90px;
+    color: gray;
+}
+
+.add-offer-container {
+    padding: 0 200px;
+}
+
+.game-selection {
+    position: relative;
+}
+
+.game-selection .name-game {
+    color: gray;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.game-selection button {
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid #d6d6d6;
+    color: black;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 7px;
+    transition: border-color 0.2s ease;
+}
+
+.game-selection button:focus {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+.game-selection ul {
+    position: absolute;
+    flex-direction: column;
+    background-color: #eeeeee;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.game-selection li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.type-offer-selection {
+    position: relative;
+}
+
+.type-offer-selection .name-type-offer {
+    color: gray;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.type-offer-selection button {
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid #d6d6d6;
+    color: black;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 7px;
+    transition: border-color 0.2s ease;
+}
+
+.type-offer-selection ul {
+    position: absolute;
+    flex-direction: column;
+    background-color: #eeeeee;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 5;
+}
+
+.type-offer-selection li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.type-offer-selection button:focus {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+.platform-selection {
+    position: relative;
+}
+
+.platform-selection .name-platform-offer{
+    color: gray;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.platform-selection button {
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid #d6d6d6;
+    color: black;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.platform-selection button:focus {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+.platform-selection ul {
+    position: absolute;
+    flex-direction: column;
+    background-color: #eeeeee;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.platform-selection li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.title-offer p {
+    color: gray;
+    font-size: 15px;
+    margin: 10px 0 5px 0;
+}
+
+.title-offer textarea {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    border: 1px solid #d6d6d6;
+    transition: border-color 0.3s ease;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: none;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.title-offer textarea:focus {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+.description-offer p {
+    color: gray;
+    font-size: 15px;
+    margin: 10px 0 5px 0;
+}
+
+.description-offer textarea {
+    width: 100%;
+    height: 200px;
+    font-size: 16px;
+    border: 1px solid #d6d6d6;
+    transition: border-color 0.3s ease;
+    border-radius: 10px;
+    box-sizing: border-box;
+    resize: none;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.description-offer textarea:focus {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+.photo-offer p {
+    color: gray;
+    font-size: 15px;
+    margin: 10px 0 5px 0;
+}
+
+.custom-photo-offer-button {
+    display: flex;
+    justify-content: space-between; /* Смещаем изображение к правому краю */
+    align-items: center;
+    border: 1px solid #B1B1B1;
+    padding: 0px 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: border-color 0.5s ease;
+}
+
+.custom-photo-offer-button:hover {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+.price-and-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-offer {
+    position: relative;
+}
+
+.price-offer p {
+    color: gray;
+    font-size: 15px;
+    margin: 10px 0 5px 0;
+}
+
+.price-offer input {
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: none;
+    padding: 10px;
+    font-size: 17px;
+    transition: border-color 0.4s ease;
+}
+
+.price-offer input:focus {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+.price-offer label {
+    position: absolute;
+    top: 74%;
+    left: 90%;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 20px;
+    font-weight: 900;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+.quantity-offer {
+    position: relative;
+}
+
+.quantity-offer p {
+    color: gray;
+    font-size: 15px;
+    margin: 10px 0 5px 0;
+}
+
+.quantity-offer input {
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: none;
+    padding: 10px;
+    font-size: 17px;
+    transition: border-color 0.4s ease;
+}
+
+.quantity-offer input:focus {
+    outline: none;
+    border-color: #ff6a00;
+    border-width: 3px;
+}
+
+.quantity-offer label {
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 20px;
+    font-weight: 900;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+.add-offer-save-botton button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #ff6a00;
+    margin: 35px 0;
+    border: none;
+    height: 40px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.add-offer-save-botton button:hover {
+    background-color: #f07008;
+}
+
+@media (max-width: 2000px) {
+    .add-offer-page {
+        padding: 20px 250px;
+    }
+    
+    .add-offer-container {
+        padding: 0 250px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .add-offer-page {
+        padding: 20px 90px;
+    }
+    
+    .add-offer-container {
+        padding: 0 200px;
+    }
+}
+
+@media (max-width: 1318px) {
+    .add-offer-page {
+        padding: 20px 20px;
+    }
+    
+    .add-offer-container {
+        padding: 0 20px;
+    }
+}

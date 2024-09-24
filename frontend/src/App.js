@@ -16,19 +16,18 @@ import SalesPage from "./Pages/SalesPage";
 import ListedProductPage from "./Pages/ListedProductPage";
 import Footer from "./Components/Footer";
 import PremiumPage from "./Pages/PremiumPage";
+import AddProductPage from "./Pages/Add-ProductPage";
 
-// Helper component to conditionally render footer
 const Layout = ({ children }) => {
   const location = useLocation();
 
-  // Определяем страницы, на которых не нужно показывать футер
   const noFooterPaths = ["/chats", "/create_account", "/auth", "/premium"];
 
   return (
     <>
       <Header />
       {children}
-      {!noFooterPaths.includes(location.pathname) && <Footer />} {/* Если путь не в списке, показать футер */}
+      {!noFooterPaths.includes(location.pathname) && <Footer />}
     </>
   );
 }
@@ -51,6 +50,7 @@ function App() {
           <Route path="/sales" element={<SalesPage />} />
           <Route path="/listed" element={<ListedProductPage />} />
           <Route path="/premium" element={<PremiumPage />} />
+          <Route path="/add_offer" element={<AddProductPage />} />
         </Routes>
       </Layout>
     </Router>
