@@ -40,10 +40,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path='/catalog' element={<Catalog />}/>
           <Route path="/product" element={<DetailProduct />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/create_account" element={<Registration />} />
-          <Route path="/auth" element={<Auth />} />
+          <Route path="/user/:userId" element={<Dashboard />} />
+          <Route path="/user/ep" element={<Profile />} />
+          <Route path="/user/create_account" element={<Registration />} />
+          <Route path="/user/auth" element={<Auth />} />
           <Route path="/chats" element={<Chat />} />
           <Route path="/finance" element={<FinancePage />} />
           <Route path="/purchases" element={<PurchasePage />} />

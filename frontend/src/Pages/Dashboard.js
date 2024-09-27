@@ -1,13 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link} from "react-router-dom";
+
+import { useParams } from "react-router-dom";
 
 import financeIcon from "../Images/finance.png"
 import ratingIcon from "../Images/rating.png"
 import profileIcon from "../Images/profile-user.png"
 
 import "../Css/Dashboard.css"
+import axios from "axios";
 
-// Компонент для карточек
 const Card = ({ title, text, link, children }) => {
   return (
     <div className="card">
@@ -27,8 +29,62 @@ const Card = ({ title, text, link, children }) => {
   );
 };
 
-// Главный компонент
-const Dashboard = () => {
+const Dashboard = () => { 
+    const { userId } = useParams();  // Достаем ID пользователя из URL
+    const [nickname, setNickname] = useState('');
+
+    useEffect(() => {
+      if (userId) {
+          const fetchUserProfile = async () => {
+              try {
+                  const response = await axios.get(`http://localhost:8000/user/api/${userId}/`);
+                  console.log(response.data);
+                  setNickname(response.data.nickname);
+              } catch (error) {
+                  console.error('Ошибка получения профиля:', error);
+              }
+          };
+  
+          fetchUserProfile();
+      }
+  }, [userId]);
+
+  const handleLogout = async () => {
+    const csrfToken = getCookie('csrftoken'); // Функция для получения токена CSRF из cookies
+    try {
+        await axios.post(
+            'http://localhost:8000/user/api/logout/',
+            {},
+            {
+                withCredentials: true, // Убедитесь, что cookies отправляются
+                headers: {
+                    'X-CSRFToken': csrfToken // Включите токен CSRF в заголовки
+                }
+            }
+        );
+
+        window.location.href = '/';
+    } catch (error) {
+        console.error("Ошибка при выходе:", error.response ? error.response.data : error.message);
+    }
+};
+
+// Утилитная функция для получения токена CSRF из cookies
+const getCookie = (name) => {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Проверяем, начинается ли эта строка cookie с нужного имени
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+};
   return (
     <>
       <p className="page-name-dashboard">Главная / Меню</p>
@@ -44,18 +100,20 @@ const Dashboard = () => {
             <p>Баланс <span>10 000₽</span></p>
           </div>
         </Card>
-        <Card link="/profile">
-          <div className="card-profile">
-            <img src={profileIcon} alt="Профиль" className="profile-pic" />
-            <div className="profile-info">
-              <h3>Sw11shers</h3>
-              <Link className="card-profile-premium" to="/premium">Premium</Link>
+        <div className="card" link="/profile">
+          <Link to='/ep/'>
+            <div className="card-profile">
+              <img src={profileIcon} alt="Профиль" className="profile-pic" />
+              <div className="profile-info">
+                <h3>{nickname}</h3>
+                <Link className="card-profile-premium" to="/premium">Premium</Link>
+              </div>
             </div>
-          </div>
+          </Link>
           <div className="card-profile-desc">
-            <p>Email <span>example@gmail.com</span> <button>Выйти</button></p>
+            <p>Email <span>sdvwd@</span><button onClick={handleLogout}>Выйти</button></p>
           </div>
-        </Card>
+        </div>
         <Card>
           <div className="card-rating">
             <img src={ratingIcon} alt="Рейтинг" />

@@ -82,6 +82,22 @@ function Catalog() {
                                 </ul>
                             </div>
                             <div className="name-platform">
+                                <h3>Категории</h3>
+                            </div>
+                            <div className="platforms">
+                                <ul className="platform-list">
+                                    {["GTA 5", "RDR 2", "Minecraft", "CS 2", "Dota 2"].map(platform => (
+                                        <li key={platform} className="platform-item">
+                                            <label className="custom-checkbox">
+                                                <input type="checkbox" className="checkbox-input" />
+                                                <span className="checkbox-mark"></span>
+                                            </label>
+                                            {platform}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="name-platform">
                                 <h3>Платформы</h3>
                             </div>
                             <div className="platforms">
