@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import "../Css/Header.css";
 
+import LoadingInd from '../Components/Loading'
+
 import logoIcon from '../Images/logo.png';
 import catalogIcon from '../Images/catalog.png';
 import profileIcon from '../Images/profile.png';
@@ -14,6 +16,7 @@ function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [userId, setUserId] = useState(null);
 
     useEffect(() => {
@@ -29,7 +32,10 @@ function Header() {
             .catch((error) => {
                 console.log('Ошибка проверки авторизации', error);
                 setIsAuthenticated(false);
+            }).finally (() => {
+                setLoading(false);
             });
+
     }, []);
 
     const toggleMenu = () => {
@@ -61,7 +67,7 @@ function Header() {
                 <div className="right-group desktop">
                     <nav className="nav-right-group">
                         <ul className="right-btn">
-                            {isAuthenticated ? (
+                            {loading ? (<LoadingInd />) : isAuthenticated ? (
                                 <>
                                     <li className="li-btn-right chat">
                                         <Link className="chat" to="/chats">Сообщения</Link>

@@ -14,7 +14,7 @@ from rest_framework_simplejwt.exceptions import InvalidToken
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.middleware import csrf
 
-from users.models import User
+from users.models import User, Balance
 from users.serializers import RegisterSerializer, ProfileSerializer
 
 class CheckAuthAPIView(APIView):
@@ -63,7 +63,7 @@ class LoginAPIView(APIView):
             return Response({'error': 'Неверные данные'}, status=status.HTTP_401_UNAUTHORIZED)
 
         data = get_tokens_for_user(user)
-        response = Response(data)  # Make sure to initialize the Response with token data
+        response = Response(data)
 
         response.set_cookie(
             key=settings.SIMPLE_JWT['AUTH_COOKIE'], 
@@ -100,17 +100,17 @@ class CookieTokenObtainPairView(TokenObtainPairView):
 class CookieTokenRefreshView(TokenRefreshView):
     def finalize_response(self, request, response, *args, **kwargs):
         if response.data.get('refresh'):
-            cookie_max_age = 3600 * 24 * 14 # 14 days
+            cookie_max_age = 3600 * 24 * 14
             response.set_cookie('refresh_token', response.data['refresh'], max_age=cookie_max_age, httponly=True )
             del response.data['refresh']
         return super().finalize_response(request, response, *args, **kwargs)
     serializer_class = CookieTokenRefreshSerializer
 
-class ProfileAPIView(APIView):
+class ProfileAPIView(APIView): # Профиль пользователя
     permission_classes = [IsAuthenticated]
 
     def get(self, request, user_id):
-        user = User.objects.filter(pk=user_id).first()
+        user = User.objects.filter(pk=user_id).first() # Получаем текущего пользователя
 
         if not user:
             return Response({'detail': 'Пользователь не найден'}, status=404)
@@ -122,14 +122,14 @@ class LogoutAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        refresh_token = request.data.get("refresh_token")
+        refresh_token = request.data.get("refresh_token") # Получаем refresh_token для дальнейшего занесения его в чс
         if refresh_token:
             try:
                 token = RefreshToken(refresh_token)
-                token.blacklist() 
+                token.blacklist() # Заносим токен в чс
             except Exception as e:
                 return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
         response = Response({'message': 'Успешный выход!'}, status=status.HTTP_205_RESET_CONTENT)
-        response.delete_cookie(settings.SIMPLE_JWT['AUTH_COOKIE'])
+        response.delete_cookie(settings.SIMPLE_JWT['AUTH_COOKIE']) # Удаляем куки
         return response

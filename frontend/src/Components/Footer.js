@@ -8,7 +8,9 @@ import vkIcon from "../Images/vk-icon.png";
 
 import "../Css/Footer.css"
 
-function Footer() {
+function Footer({ loading }) {
+    if (loading) return null;
+
     return (
         <>
             <div className="footer-container">

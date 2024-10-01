@@ -26,8 +26,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
-      {!noFooterPaths.includes(location.pathname) && <Footer />}
+        {children}
+        {!noFooterPaths.includes(location.pathname) && <Footer />}
     </>
   );
 }

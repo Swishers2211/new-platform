@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from users.models import User
+from users.models import User, Balance
 
 class RegisterSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=60)
@@ -20,9 +20,10 @@ class RegisterSerializer(serializers.ModelSerializer):
         return instance
 
 class ProfileSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = User
-        fields = ['id', 'username', 'email']
+        fields = ['id', 'username', 'email',]
 
     def to_representation(self, instance):
         data = super().to_representation(instance)
