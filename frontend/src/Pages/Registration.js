@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 import '../Css/Registration.css';
+
+import apiClient from '../axiosConfig';
 
 function Registration() {
     const [username, setUsername] = useState('');
@@ -14,13 +15,13 @@ function Registration() {
         e.preventDefault();
 
         try {
-            await axios.post('http://localhost:8000/user/api/create_account/', {
+            await apiClient.post('/user/api/create_account/', {
                 username: username,
                 email: email,
                 password: password
             });
 
-            window.location.href = '/user/auth';
+            navigate('/user/auth/')
 
         } catch (error) {
             console.log('Ошибка регистрации', error.response.data);

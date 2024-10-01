@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 import '../Css/Auth.css'
+
+import apiClient from '../axiosConfig';
 
 function Auth() {
     const [email, setEmail] = useState('');
@@ -12,15 +13,11 @@ function Auth() {
         e.preventDefault();
 
         try {
-            await axios.post('http://localhost:8000/user/api/auth/', 
-                {
-                    email: email,
-                    password: password,
-                
-                },
-                {
-                    withCredentials: true,
-                }
+            await apiClient.post('/user/api/auth/', {
+                email: email,
+                password: password,
+            },
+            { withCredentials: true, }
         );
 
             window.location.href = '/';
@@ -37,6 +34,16 @@ function Auth() {
                     <h3 className='title-auth'>Авторизация</h3>
                     <div className='auth-fields'>
                         <form onSubmit={handleSubmit}>
+                            {/* <label htmlFor="username-auth"></label>
+                                <input 
+                                    type="text" 
+                                    id="username-auth" 
+                                    name="username" 
+                                    placeholder="username" 
+                                    autoComplete="off" 
+                                    value=''
+                                    onChange={(e) => setEmail(e.target.value)}
+                                /> */}
                             <label htmlFor="email-auth"></label>
                             <input 
                                 type="text" 

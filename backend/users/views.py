@@ -21,7 +21,12 @@ class CheckAuthAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        return Response({'isAuthenticated': True,})
+        if request.user.is_authenticated:
+                user_id = request.user.id
+                return Response({'isAuthenticated': True, 'user_id': user_id})
+        else:
+            return Response(
+                {'message': 'Сначала авторизуйтесь!'}, status=status.HTTP_401_UNAUTHORIZED)
 
 class RegisterAPIView(APIView):
     permission_classes = [AllowAny]
@@ -102,7 +107,7 @@ class CookieTokenRefreshView(TokenRefreshView):
     serializer_class = CookieTokenRefreshSerializer
 
 class ProfileAPIView(APIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, user_id):
         user = User.objects.filter(pk=user_id).first()
@@ -111,11 +116,7 @@ class ProfileAPIView(APIView):
             return Response({'detail': 'Пользователь не найден'}, status=404)
 
         serializer = ProfileSerializer(user, context={'request': request})
-        return Response({
-            'id': user.id,
-            'nickname': serializer.data['username'],
-            'email': serializer.data['email'],
-        })
+        return Response(serializer.data)
 
 class LogoutAPIView(APIView):
     permission_classes = [IsAuthenticated]

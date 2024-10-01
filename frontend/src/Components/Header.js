@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../App.css";
 import "../Css/Header.css";
 
@@ -7,19 +7,21 @@ import logoIcon from '../Images/logo.png';
 import catalogIcon from '../Images/catalog.png';
 import profileIcon from '../Images/profile.png';
 import arrowIcon from '../Images/arrow-down.png';
-import axios from "axios";
+
+import apiClient from "../axiosConfig";
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const { userId } = useParams();
+    const [userId, setUserId] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/user/api/check_auth/', { withCredentials: true })
+        apiClient.get('/user/api/check_auth/', { withCredentials: true })
             .then((response) => {
                 if (response.data.isAuthenticated) {
                     setIsAuthenticated(true);
+                    setUserId(response.data.user_id)
                 } else {
                     setIsAuthenticated(false);
                 }
@@ -72,7 +74,7 @@ function Header() {
                                         {isProfileMenuOpen && (
                                             <div className={`dropdown-dashboard ${isProfileMenuOpen ? 'active' : ''}`}>
                                                 <ul>
-                                                    <li onClick={(e) => e.stopPropagation()}><Link className="dashboard" to={`/user/${userId}`}><h3>Nickname</h3></Link></li>
+                                                    <li onClick={(e) => e.stopPropagation()}><Link className="dashboard" to={`/user/${userId}/`}><h3>Nickname</h3></Link></li>
                                                     <li onClick={(e) => e.stopPropagation()}><Link className="rules" to="/rules">Правила</Link></li>
                                                 </ul>
                                             </div>
@@ -106,7 +108,7 @@ function Header() {
                         <ul>
                             {isAuthenticated ? (
                                 <>
-                                    <li><Link to="/user/">Username</Link></li>
+                                    <li><Link to={`/user/${userId}/`}>Username</Link></li>
                                     <li><Link to="/catalog" className="catalog-mobile">Каталог</Link></li>
                                     <li><Link to="/chats">Сообщения</Link></li>
                                     <li className="premium-link">

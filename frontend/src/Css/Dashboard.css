@@ -11,6 +11,15 @@
     color: gray;
 }
   
+.log-in-first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .card {
     background-color: #ffffff;
     border: 1px solid #ddd;
